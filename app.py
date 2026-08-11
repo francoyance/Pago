@@ -4,9 +4,13 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)  # Permite peticiones de origen cruzado (necesario para Flutter)
 
-# Credenciales estáticas en código
-USUARIO_CORRECTO = "kayser"
-PASSWORD_CORRECTO = "1234"
+# Diccionario de usuarios válidos (usuario: contraseña)
+USUARIOS_VALIDOS = {
+    "kayser": "1234",
+    "admin": "admin2026",
+    "usuario2": "abcd",
+    "piero": "piero12345678"  # <--- Nuevo usuario agregado aquí
+}
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -19,11 +23,11 @@ def login():
     usuario = data.get('usuario')
     password = data.get('password')
 
-    # Validar credenciales
-    if usuario == USUARIO_CORRECTO and password == PASSWORD_CORRECTO:
+    # Validar si el usuario existe y la contraseña coincide
+    if usuario in USUARIOS_VALIDOS and USUARIOS_VALIDOS[usuario] == password:
         return jsonify({
             "status": "success",
-            "mensaje": "¡Bienvenido! Inicio de sesión exitoso."
+            "mensaje": f"¡Bienvenido, {usuario}! Inicio de sesión exitoso."
         }), 200
     else:
         return jsonify({
