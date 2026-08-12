@@ -6,9 +6,9 @@ CORS(app)  # Permite peticiones de origen cruzado (necesario para Flutter)
 
 # Diccionario de usuarios válidos (usuario: contraseña)
 USUARIOS_VALIDOS = {
-    "kayser": "1234",
-    "admin": "admin2026",
-    "usuario2": "abcd",
+    "franco": "franco2000",
+    "fabian": "fabian2026",
+    "giusepe": "giusepe1234",
     "piero": "piero12345678"  # <--- Nuevo usuario agregado aquí
 }
 
