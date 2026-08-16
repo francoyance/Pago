@@ -9,6 +9,7 @@ USUARIOS_VALIDOS = {
     "franco": "franco2000",
     "fabian": "fabian2026",
     "giusepe": "giusepe1234",
+    "junior": "junior123",
     "piero": "piero12345678"  # <--- Nuevo usuario agregado aquí
 }
 
