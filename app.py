@@ -68,16 +68,22 @@ def home():
   )
 
 
-@app.route("/login", methods=["POST"])
+@app.route('/login', methods=['POST'])
 def login():
   try:
     data = request.get_json()
     if not data:
       return jsonify({"status": "error", "mensaje": "Datos no proporcionados"}), 400
 
-    usuario = data.get("usuario", "").strip().lower()
-    password = data.get("password", "")
-    device_id = data.get("device_id", "").strip()
+    usuario = data.get('usuario', '').strip().lower()
+    password = data.get('password', '')
+    device_id = data.get('device_id', '').strip()
+
+    # --- AGREGA ESTO PARA DEPURAR EN RENDER ---
+    print(
+        f"INTENTO DE LOGIN -> Usuario: {usuario} | Device ID recibido:"
+        f" {device_id}"
+    )
 
     if not usuario or not password or not device_id:
       return (
