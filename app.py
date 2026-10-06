@@ -18,7 +18,7 @@ USUARIOS_DB = {
         "password": generate_password_hash("fabian2026"),
         "device_id": None,
         "membresia_inicio": "2026-01-01",
-        "membresia_fin": "2026-03-01",  # Membresía vencida para pruebas
+        "membresia_fin": "2026-12-31",  
     },
     "giusepe": {
         "password": generate_password_hash("giusepe1234"),
